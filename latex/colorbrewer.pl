@@ -242,6 +242,9 @@ my $colorbrewer =
 
 sub h { return sprintf("%02x", shift(@_)); }
 
+open my $fh, ">", "colorbrewer.tex" or
+    die "Unable to open > colorbrewer.tex: $!";
+
 for my $c (keys %$colorbrewer) {
     my $color = $colorbrewer->{$c};
     for my $i (sort {$a cmp $b} keys %$color) {
@@ -253,8 +256,109 @@ for my $c (keys %$colorbrewer) {
             my ($r, $g, $b) = ($1, $2, $3);
             my ($rf, $gf, $bf) = ($r/255, $g/255, $b/255);
             my ($rh, $gh, $bh) = (h($r), h($g), h($b));
-            print "\\definecolor{$c${i}p$j}{rgb}{$rf,$gf,$bf}\n";
-            print "\\pgfkeyssetvalue{/hazen/hex/$c/$i/$j}{\\#$rh$gh$bh}\n";
+            print $fh "\\definecolor{$c${i}p$j}{rgb}{$rf,$gf,$bf}\n";
+            print $fh "\\pgfkeyssetvalue{/hazen/hex/$c/$i/$j}{\\#$rh$gh$bh}\n";
         }
     }
 }
+
+close $fh;
+
+# I want to print out a latex file that will show all the different
+# color swatches. LaTeX is being a jackass, so I'll just use this perl
+# script to do it explicitly.
+
+open $fh, ">", "palette-all.tex" or
+    die "Unable to open > palette-all.tex: $!";
+
+my $header;
+
+$header = <<END;
+\\documentclass{article}
+\\usepackage[margin=0mm]{geometry}
+\\setlength{\\parindent}{0cm}
+\\usepackage{tikz}
+\\usetikzlibrary{arrows,backgrounds,positioning,calc}
+\\include{colorbrewer}
+\\newcommand{\\swatch}[6]{
+  \\pgfkeysgetvalue{/hazen/hex/\#4/\#5/\#6}{\\label}
+  \\pgfmathsetlengthmacro{\\lw}{1/\#5}
+  \\pgfmathsetlengthmacro{\\lh}{1/\#2}
+  \\pgfmathsetmacro{\\rx}{\#6/\#5}
+  \\pgfmathsetmacro{\\ry}{\#3/\#2}
+  \\coordinate (x{\#4}r{\#3}c{\#6}) at (\$(\#1.west)!\\rx!(\#1.east)\$) {};
+  \\coordinate (y{\#4}r{\#3}c{\#6}) at (\$(\#1.north)!\\ry!(\#1.south)\$) {};
+  \\path let
+  \\p1 = (\$\\lw*(\#1.east)-\\lw*(\#1.west)+(1pt,0)\$),
+  \\p2 = (\$\\lh*(\#1.north)-\\lh*(\#1.south)+(0,1pt)\$)
+  in node[
+  swatch=\#4\#5p\#6,
+  minimum width=\\x1,
+  minimum height=\\y2,
+  ]
+  ({\#4}r{\#3}c{\#6})
+  at (x{\#4}r{\#3}c{\#6} |- y{\#4}r{\#3}c{\#6})
+  {\\label};
+}
+\\newcommand{\\row}[5]{
+  \\pgfmathtruncatemacro{\\cmax}{\#5-1}
+  \\foreach \\c in {0,...,\\cmax} {
+    \\swatch{\#1}{\#2}{\#3}{\#4}{\#5}{\\c}
+  }
+}
+\\newcommand{\\block}[3]{
+  \\pgfmathtruncatemacro{\\rmax}{\#2-1}
+  \\foreach \\r in {0,...,\\rmax} {
+    \\pgfmathtruncatemacro{\\ps}{\\r+3}
+    \\row{\#1}{\#2}{\\r}{\#3}{\\ps}
+  }
+}
+\\begin{document}
+END
+
+print $fh $header;
+
+for my $c (keys %$colorbrewer) {
+    my $color = $colorbrewer->{$c};
+    my $count = scalar(keys %$color);
+    my $tikzpicture = <<END;
+  \\begin{tikzpicture}[
+      remember picture,
+      overlay,
+      swatch/.style={
+        rectangle,
+        anchor=north west,
+        inner sep=0mm,
+        minimum width=1.5cm,
+        minimum height=1cm,
+        fill=\#1,
+        text=black,
+        font={\\tiny}
+      },
+      block/.style={
+        rectangle,
+        anchor=north west,
+        inner sep=0mm,
+      },
+    ]
+    \\coordinate (page west) at (\$(current page.west)+(1cm,0)\$);
+    \\coordinate (page east) at (\$(current page.east)-(1cm,0)\$);
+    \\coordinate (page south) at (\$(current page.south)+(0,1cm)\$);
+    \\coordinate (page north) at (\$(current page.north)-(0,1cm)\$);
+    \\path let
+    \\p1 = (\$(page east) - (page west)\$),
+    \\p2 = (\$(page north) - (page south)\$)
+    in node[
+      minimum width=\\x1,
+      minimum height=\\y2,
+    ] (page) at (current page.center) {page};
+    \\block{page}{$count}{$c}
+  \\end{tikzpicture}
+  \\clearpage
+END
+    print $fh $tikzpicture;
+}
+
+printf $fh "\\end{document}\n";
+
+close $fh;
