@@ -279,6 +279,7 @@ $header = <<END;
 \\setlength{\\parindent}{0cm}
 \\usepackage{tikz}
 \\usetikzlibrary{arrows,backgrounds,positioning,calc}
+\\usepackage{xcolor}
 \\include{colorbrewer}
 \\newcommand{\\swatch}[6]{
   \\pgfkeysgetvalue{/hazen/hex/\#4/\#5/\#6}{\\label}
@@ -322,6 +323,7 @@ for my $c (keys %$colorbrewer) {
     my $color = $colorbrewer->{$c};
     my $count = scalar(keys %$color);
     my $tikzpicture = <<END;
+  $c
   \\begin{tikzpicture}[
       remember picture,
       overlay,

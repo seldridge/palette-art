@@ -3,3 +3,4 @@ latex/*.dat
 latex/*.dvi
 latex/*.log
 latex/*.pdf
+latex/*.js
