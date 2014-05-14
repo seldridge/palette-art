@@ -4,3 +4,8 @@ latex/*.dvi
 latex/*.log
 latex/*.pdf
 latex/*.js
+latex/*.tex
+latex/*.fdb_latexmk
+latex/*.fls
+latex/*.tex
+*.bak

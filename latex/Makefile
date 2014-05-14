@@ -15,4 +15,4 @@ palette-all.pdf: colorbrewer.tex
 	$(LATEXMK) palette-all.tex
 
 clean:
-	rm -f *.pdf *.aux *.auxlock *.dvi *.log *.nav *.out *.ps *.snm *.toc *.dep *.dpth *.notes *.fdb_latexmk *.fls
+	rm -f *.pdf *.aux *.auxlock *.dvi *.log *.nav *.out *.ps *.snm *.toc *.dep *.dpth *.notes *.fdb_latexmk *.fls *.tex
