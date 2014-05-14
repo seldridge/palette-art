@@ -1,4 +1,5 @@
 TARGETS=colorbrewer.tex palette-all.pdf
+LATEXMK=latexmk -pdf -latexoption="--shell-escape -halt-on-error -file-line-error" -bibtex- -time
 
 all: $(TARGETS)
 
@@ -11,7 +12,7 @@ colorbrewer.tex: colorbrewer.pl colorbrewer.js
 	./colorbrewer.pl
 
 palette-all.pdf: colorbrewer.tex
-	pdflatex palette-all.tex
+	$(LATEXMK) palette-all.tex
 
 clean:
-	rm -f *.tex *~ *.pdf *.log *.aux
+	rm -f *.pdf *.aux *.auxlock *.dvi *.log *.nav *.out *.ps *.snm *.toc *.dep *.dpth *.notes *.fdb_latexmk *.fls
