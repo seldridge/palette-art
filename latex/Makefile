@@ -6,7 +6,7 @@ all: $(TARGETS)
 default: all
 
 colorbrewer.js:
-	wget -N colorbrewer2.org/export/colorbrewer.js
+	curl colorbrewer2.org/export/colorbrewer.js -o colorbrewer.js
 
 colorbrewer.tex: colorbrewer.pl colorbrewer.js
 	./colorbrewer.pl
@@ -15,4 +15,4 @@ palette-all.pdf: colorbrewer.tex
 	$(LATEXMK) palette-all.tex
 
 clean:
-	rm -f *.pdf *.aux *.auxlock *.dvi *.log *.nav *.out *.ps *.snm *.toc *.dep *.dpth *.notes *.fdb_latexmk *.fls *.tex
+	rm -f *.pdf *.aux *.auxlock *.dvi *.log *.nav *.out *.ps *.snm *.toc *.dep *.dpth *.notes *.fdb_latexmk *.fls *.tex *.js
