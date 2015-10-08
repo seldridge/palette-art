@@ -1,0 +1,255 @@
+GIMP Palette
+Name: Colorbrewer
+Columns: 9
+# Buffers to deal with Inkscape "none" swatch alignment
+  0   0   0     buffer1
+  0   0   0     buffer2
+  0   0   0     buffer3
+  0   0   0     buffer4
+  0   0   0     buffer5
+  0   0   0     buffer6
+  0   0   0     buffer7
+  0   0   0     buffer8
+252 251 253     Purples9p8
+239 237 245     Purples9p7
+218 218 235     Purples9p6
+188 189 220     Purples9p5
+158 154 200     Purples9p4
+128 125 186     Purples9p3
+106  81 163     Purples9p2
+ 84  39 143     Purples9p1
+ 63   0 125     Purples9p0
+247 251 255     Blues9p8
+222 235 247     Blues9p7
+198 219 239     Blues9p6
+158 202 225     Blues9p5
+107 174 214     Blues9p4
+ 66 146 198     Blues9p3
+ 33 113 181     Blues9p2
+  8  81 156     Blues9p1
+  8  48 107     Blues9p0
+247 252 245     Greens9p8
+229 245 224     Greens9p7
+199 233 192     Greens9p6
+161 217 155     Greens9p5
+116 196 118     Greens9p4
+ 65 171  93     Greens9p3
+ 35 139  69     Greens9p2
+  0 109  44     Greens9p1
+  0  68  27     Greens9p0
+255 245 235     Oranges9p8
+254 230 206     Oranges9p7
+253 208 162     Oranges9p6
+253 174 107     Oranges9p5
+253 141  60     Oranges9p4
+241 105  19     Oranges9p3
+217  72   1     Oranges9p2
+166  54   3     Oranges9p1
+127  39   4     Oranges9p0
+255 245 240     Reds9p8
+254 224 210     Reds9p7
+252 187 161     Reds9p6
+252 146 114     Reds9p5
+251 106  74     Reds9p4
+239  59  44     Reds9p3
+203  24  29     Reds9p2
+165  15  21     Reds9p1
+103   0  13     Reds9p0
+255 255 255     Greys9p8
+240 240 240     Greys9p7
+217 217 217     Greys9p6
+189 189 189     Greys9p5
+150 150 150     Greys9p4
+115 115 115     Greys9p3
+ 82  82  82     Greys9p2
+ 37  37  37     Greys9p1
+  0   0   0     Greys9p0
+255 255 229     YlGn9p8
+247 252 185     YlGn9p8
+217 240 163     YlGn9p8
+173 221 142     YlGn9p8
+120 198 121     YlGn9p8
+ 65 171  93     YlGn9p8
+ 35 132  67     YlGn9p8
+  0 104  55     YlGn9p8
+  0  69  41     YlGn9p8
+255 255 217     YlGnBu9p8
+237 248 177     YlGnBu9p8
+199 233 180     YlGnBu9p8
+127 205 187     YlGnBu9p8
+ 65 182 196     YlGnBu9p8
+ 29 145 192     YlGnBu9p8
+ 34  94 168     YlGnBu9p8
+ 37  52 148     YlGnBu9p8
+  8  29  88     YlGnBu9p8
+247 252 240     GnBu9p8
+224 243 219     GnBu9p8
+204 235 197     GnBu9p8
+168 221 181     GnBu9p8
+123 204 196     GnBu9p8
+ 78 179 211     GnBu9p8
+ 43 140 190     GnBu9p8
+  8 104 172     GnBu9p8
+  8  64 129     GnBu9p8
+247 252 253     BuGn9p8
+229 245 249     BuGn9p8
+204 236 230     BuGn9p8
+153 216 201     BuGn9p8
+102 194 164     BuGn9p8
+ 65 174 118     BuGn9p8
+ 35 139  69     BuGn9p8
+  0 109  44     BuGn9p8
+  0  68  27     BuGn9p8
+255 247 251     PuBuGn9p8
+236 226 240     PuBuGn9p8
+208 209 230     PuBuGn9p8
+166 189 219     PuBuGn9p8
+103 169 207     PuBuGn9p8
+ 54 144 192     PuBuGn9p8
+  2 129 138     PuBuGn9p8
+  1 108  89     PuBuGn9p8
+  1  70  54     PuBuGn9p8
+255 247 251     PuBu9p8
+236 231 242     PuBu9p8
+208 209 230     PuBu9p8
+166 189 219     PuBu9p8
+116 169 207     PuBu9p8
+ 54 144 192     PuBu9p8
+  5 112 176     PuBu9p8
+  4  90 141     PuBu9p8
+  2  56  88     PuBu9p8
+247 252 253     BuPu9p8
+224 236 244     BuPu9p8
+191 211 230     BuPu9p8
+158 188 218     BuPu9p8
+140 150 198     BuPu9p8
+140 107 177     BuPu9p8
+136  65 157     BuPu9p8
+129  15 124     BuPu9p8
+ 77   0  75     BuPu9p8
+255 247 243     RdPu9p8
+253 224 221     RdPu9p8
+252 197 192     RdPu9p8
+250 159 181     RdPu9p8
+247 104 161     RdPu9p8
+221  52 151     RdPu9p8
+174   1 126     RdPu9p8
+122   1 119     RdPu9p8
+ 73   0 106     RdPu9p8
+247 244 249     PuRd9p8
+231 225 239     PuRd9p8
+212 185 218     PuRd9p8
+201 148 199     PuRd9p8
+223 101 176     PuRd9p8
+231  41 138     PuRd9p8
+206  18  86     PuRd9p8
+152   0  67     PuRd9p8
+103   0  31     PuRd9p8
+255 247 236     OrRd9p8
+254 232 200     OrRd9p8
+253 212 158     OrRd9p8
+253 187 132     OrRd9p8
+252 141  89     OrRd9p8
+239 101  72     OrRd9p8
+215  48  31     OrRd9p8
+179   0   0     OrRd9p8
+127   0   0     OrRd9p8
+255 255 204     YlOrRd9p8
+255 237 160     YlOrRd9p8
+254 217 118     YlOrRd9p8
+254 178  76     YlOrRd9p8
+253 141  60     YlOrRd9p8
+252  78  42     YlOrRd9p8
+227  26  28     YlOrRd9p8
+189   0  38     YlOrRd9p8
+128   0  38     YlOrRd9p8
+255 255 229     YlOrBr9p8
+255 247 188     YlOrBr9p8
+254 227 145     YlOrBr9p8
+254 196  79     YlOrBr9p8
+254 153  41     YlOrBr9p8
+236 112  20     YlOrBr9p8
+204  76   2     YlOrBr9p8
+153  52   4     YlOrBr9p8
+102  37   6     YlOrBr9p8
+179  88   6     PuOr9p8
+224 130  20     PuOr9p8
+253 184  99     PuOr9p8
+254 224 182     PuOr9p8
+247 247 247     PuOr9p8
+216 218 235     PuOr9p8
+178 171 210     PuOr9p8
+128 115 172     PuOr9p8
+ 84  39 136     PuOr9p8
+140  81  10     BrBG9p8
+191 129  45     BrBG9p8
+223 194 125     BrBG9p8
+246 232 195     BrBG9p8
+245 245 245     BrBG9p8
+199 234 229     BrBG9p8
+128 205 193     BrBG9p8
+ 53 151 143     BrBG9p8
+  1 102  94     BrBG9p8
+118  42 131     PRGn9p8
+153 112 171     PRGn9p8
+194 165 207     PRGn9p8
+231 212 232     PRGn9p8
+247 247 247     PRGn9p8
+217 240 211     PRGn9p8
+166 219 160     PRGn9p8
+ 90 174  97     PRGn9p8
+ 27 120  55     PRGn9p8
+197  27 125     PiYG9p8
+222 119 174     PiYG9p8
+241 182 218     PiYG9p8
+253 224 239     PiYG9p8
+247 247 247     PiYG9p8
+230 245 208     PiYG9p8
+184 225 134     PiYG9p8
+127 188  65     PiYG9p8
+ 77 146  33     PiYG9p8
+178  24  43     RdBu9p8
+214  96  77     RdBu9p8
+244 165 130     RdBu9p8
+253 219 199     RdBu9p8
+247 247 247     RdBu9p8
+209 229 240     RdBu9p8
+146 197 222     RdBu9p8
+ 67 147 195     RdBu9p8
+ 33 102 172     RdBu9p8
+178  24  43     RdGy9p8
+214  96  77     RdGy9p8
+244 165 130     RdGy9p8
+253 219 199     RdGy9p8
+255 255 255     RdGy9p8
+224 224 224     RdGy9p8
+186 186 186     RdGy9p8
+135 135 135     RdGy9p8
+ 77  77  77     RdGy9p8
+215  48  39     RdYlBu9p8
+244 109  67     RdYlBu9p8
+253 174  97     RdYlBu9p8
+254 224 144     RdYlBu9p8
+255 255 191     RdYlBu9p8
+224 243 248     RdYlBu9p8
+171 217 233     RdYlBu9p8
+116 173 209     RdYlBu9p8
+ 69 117 180     RdYlBu9p8
+213  62  79     Spectral9p8
+244 109  67     Spectral9p8
+253 174  97     Spectral9p8
+254 224 139     Spectral9p8
+255 255 191     Spectral9p8
+230 245 152     Spectral9p8
+171 221 164     Spectral9p8
+102 194 165     Spectral9p8
+ 50 136 189     Spectral9p8
+215  48  39     RdYlGn9p8
+244 109  67     RdYlGn9p8
+253 174  97     RdYlGn9p8
+254 224 139     RdYlGn9p8
+255 255 191     RdYlGn9p8
+217 239 139     RdYlGn9p8
+166 217 106     RdYlGn9p8
+102 189  99     RdYlGn9p8
+ 26 152  80     RdYlGn9p8
