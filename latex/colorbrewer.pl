@@ -257,7 +257,7 @@ for my $c (keys %$colorbrewer) {
             my ($rf, $gf, $bf) = ($r/255, $g/255, $b/255);
             my ($rh, $gh, $bh) = (h($r), h($g), h($b));
             print $fh "\\definecolor{$c${i}p$j}{rgb}{$rf,$gf,$bf}\n";
-            print $fh "\\pgfkeyssetvalue{/hazen/hex/$c/$i/$j}{\\#$rh$gh$bh}\n";
+            # print $fh "\\pgfkeyssetvalue{/hazen/hex/$c/$i/$j}{\\#$rh$gh$bh}\n";
         }
     }
 }
